@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StepStyle Footwear | Shoes & Slippers</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-shoe-prints"></i>
+        </div>
+
+        <div>
+            <h2>StepStyle</h2>
+            <span>FOOTWEAR</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <button class="icon-btn" onclick="openSearch()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <button class="cart-btn" onclick="openCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cartCount">0</span>
+        </button>
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= SEARCH ================= -->
+
+<div class="search-box" id="searchBox">
+
+    <div class="search-inner">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search shoes, slippers..."
+            oninput="searchProducts()"
+        >
+
+        <button onclick="closeSearch()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="small-title">
+            👟 YOUR EVERYDAY FOOTWEAR STORE
+        </span>
+
+        <h1>
+            Walk With
+            <span>Style.</span>
+        </h1>
+
+        <p>
+            Discover comfortable shoes and stylish slippers
+            for Kids, Men & Women at affordable prices.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#products" class="primary-btn">
+                Shop Collection
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#categories" class="secondary-btn">
+                Explore Categories
+            </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div>
+                <strong>200+</strong>
+                <span>Products</span>
+            </div>
+
+            <div>
+                <strong>₹500</strong>
+                <span>Slipper Max</span>
+            </div>
+
+            <div>
+                <strong>₹1100</strong>
+                <span>Shoe Max</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <div class="hero-circle"></div>
+
+        <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+            alt="Shoes"
+        >
+
+        <div class="floating-card card-one">
+            <i class="fa-solid fa-star"></i>
+            <div>
+                <strong>4.8/5</strong>
+                <small>Customer Rating</small>
+            </div>
+        </div>
+
+        <div class="floating-card card-two">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <strong>Easy Order</strong>
+                <small>Contact / WhatsApp</small>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORY ================= -->
+
+<section class="categories-section" id="categories">
+
+    <div class="section-heading">
+
+        <div>
+            <span>SHOP BY CATEGORY</span>
+            <h2>Find Your Perfect Pair</h2>
+        </div>
+
+        <p>
+            Comfortable footwear for every age and every occasion.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <div class="category-card" onclick="filterCategory('Shoes')">
+
+            <div class="category-image">
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+                    alt="Shoes"
+                >
+            </div>
+
+            <div class="category-content">
+                <span>100 PRODUCTS</span>
+                <h3>All Shoes</h3>
+                <button>
+                    Shop Now
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="category-card" onclick="filterCategory('Slippers')">
+
+            <div class="category-image">
+                <img
+                    src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=700&q=80"
+                    alt="Slippers"
+                >
+            </div>
+
+            <div class="category-content">
+                <span>100 PRODUCTS</span>
+                <h3>All Slippers</h3>
+                <button>
+                    Shop Now
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="category-card" onclick="filterAudience('Men')">
+
+            <div class="category-image">
+                <img
+                    src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=700&q=80"
+                    alt="Men footwear"
+                >
+            </div>
+
+            <div class="category-content">
+                <span>MEN'S COLLECTION</span>
+                <h3>Men</h3>
+                <button>
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="category-card" onclick="filterAudience('Women')">
+
+            <div class="category-image">
+                <img
+                    src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=700&q=80"
+                    alt="Women footwear"
+                >
+            </div>
+
+            <div class="category-content">
+                <span>WOMEN'S COLLECTION</span>
+                <h3>Women</h3>
+                <button>
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products-section" id="products">
+
+    <div class="section-heading">
+
+        <div>
+            <span>OUR COLLECTION</span>
+            <h2>Popular Footwear</h2>
+        </div>
+
+        <p id="productCount">
+            200 products
+        </p>
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+        <div class="filter-tabs">
+
+            <button class="filter-btn active" onclick="filterCategory('All', this)">
+                All
+            </button>
+
+            <button class="filter-btn" onclick="filterCategory('Shoes', this)">
+                Shoes
+            </button>
+
+            <button class="filter-btn" onclick="filterCategory('Slippers', this)">
+                Slippers
+            </button>
+
+        </div>
+
+
+        <select id="audienceFilter" onchange="applyFilters()">
+
+            <option value="All">All Customers</option>
+            <option value="Men">Men</option>
+            <option value="Women">Women</option>
+            <option value="Kids">Kids</option>
+
+        </select>
+
+
+        <select id="priceFilter" onchange="applyFilters()">
+
+            <option value="All">All Prices</option>
+            <option value="0-300">Under ₹300</option>
+            <option value="300-500">₹300 - ₹500</option>
+            <option value="500-800">₹500 - ₹800</option>
+            <option value="800-1100">₹800 - ₹1100</option>
+
+        </select>
+
+    </div>
+
+
+    <div class="products-grid" id="productsGrid">
+        <!-- Products generated by JavaScript -->
+    </div>
+
+
+    <button class="load-more" onclick="loadMoreProducts()">
+        Load More Products
+        <i class="fa-solid fa-plus"></i>
+    </button>
+
+</section>
+
+
+<!-- ================= OFFER ================= -->
+
+<section class="offer-section">
+
+    <div class="offer-content">
+
+        <span>LIMITED SHOP OFFER</span>
+
+        <h2>
+            Step Into Comfort.
+            <br>
+            Stay In Style.
+        </h2>
+
+        <p>
+            Great footwear at prices your pocket will love.
+        </p>
+
+        <a href="#products" class="primary-btn">
+            Browse Products
+        </a>
+
+    </div>
+
+    <div class="offer-shoe">
+        <i class="fa-solid fa-shoe-prints"></i>
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-section" id="about">
+
+    <div class="about-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=85"
+            alt="Footwear collection"
+        >
+
+    </div>
+
+    <div class="about-content">
+
+        <span>ABOUT OUR SHOP</span>
+
+        <h2>
+            Quality Footwear
+            For Everyone.
+        </h2>
+
+        <p>
+            We offer a wide range of shoes and slippers for
+            children, men and women. Our collection focuses on
+            comfort, style and affordable pricing.
+        </p>
+
+        <div class="features">
+
+            <div>
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Affordable Prices</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-circle-check"></i>
+                <span>100+ Shoe Designs</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-circle-check"></i>
+                <span>100+ Slipper Designs</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Kids, Men & Women</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section" id="contact">
+
+    <div>
+
+        <span>VISIT OR CONTACT US</span>
+
+        <h2>
+            Need Help Choosing
+            Your Footwear?
+        </h2>
+
+        <p>
+            Contact us for size, price, availability or
+            product information.
+        </p>
+
+    </div>
+
+
+    <div class="contact-buttons">
+
+        <a
+            href="https://wa.me/919999999999"
+            target="_blank"
+            class="whatsapp-btn"
+        >
+            <i class="fa-brands fa-whatsapp"></i>
+            WhatsApp Us
+        </a>
+
+        <a
+            href="tel:+919999999999"
+            class="call-btn"
+        >
+            <i class="fa-solid fa-phone"></i>
+            Call Shop
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-shoe-prints"></i>
+        </div>
+
+        <div>
+            <h2>StepStyle</h2>
+            <span>FOOTWEAR</span>
+        </div>
+
+    </div>
+
+
+    <p>
+        © 2026 StepStyle Footwear. All Rights Reserved.
+    </p>
+
+
+    <div class="socials">
+
+        <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= CART SIDEBAR ================= -->
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<aside class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+
+        <h2>
+            <i class="fa-solid fa-cart-shopping"></i>
+            Your Cart
+        </h2>
+
+        <button onclick="closeCart()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+    <div id="cartItems">
+        <p class="empty-cart">
+            Your cart is empty.
+        </p>
+    </div>
+
+    <div class="cart-footer">
+
+        <div>
+            <span>Total</span>
+            <strong id="cartTotal">₹0</strong>
+        </div>
+
+        <button class="checkout-btn" onclick="checkout()">
+            Order on WhatsApp
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
