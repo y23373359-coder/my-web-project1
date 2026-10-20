@@ -673,7 +673,7 @@ function checkout() {
 
     // CHANGE THIS NUMBER
     const phone =
-        "919162968306;
+        "919162968306";
 
 
     window.open(
