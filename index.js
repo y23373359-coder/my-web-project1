@@ -831,7 +831,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 */
 
                 const phone =
-                    "919999999999";
+                    "919162968306";
 
 
                 window.open(
